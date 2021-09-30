@@ -4,9 +4,9 @@ import { View } from 'react-native'
 
 function Back({view, style}) {
     return (
-        <View style = {style}>
+        <View>
             <Wrraper view = {view}>
-                <Img source={require('../../assets/card.jpg')} />
+                <Img style = {style} source={require('../../assets/card.jpg')} />
             </Wrraper>
         </View>
     )
@@ -23,8 +23,6 @@ const Wrraper = styled.View`
 `
 
 const Img = styled.Image`
-    width: 20px;   
-    height: 30px;
     border-radius: 10px;
 `;
 

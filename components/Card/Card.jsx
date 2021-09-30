@@ -3,7 +3,7 @@ import Front, {FRONT_STATE} from "./Front";
 import Back from './Back';
 import styled from 'styled-components/native'
 import React from "react"
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 export const CARD_STATE = {
     FRONT: "FRONT",
@@ -11,11 +11,10 @@ export const CARD_STATE = {
     HIDDEN: "HIDDEN",
 }
 
-const Card = ({image, name, onPress, state}) => {
+const Card = ({image, name, onPress, state, style, size}) => {
 
     let viewBack = null;
     let stateFront = null; 
-    let viewCursor = true;
     switch (state) {
         case CARD_STATE.FRONT: {
             viewBack = false;
@@ -30,19 +29,20 @@ const Card = ({image, name, onPress, state}) => {
         case CARD_STATE.HIDDEN: {
             viewBack = false;
             stateFront = FRONT_STATE.HIDDEN;
-            viewCursor = false
             break;
         }
         default: {}
     }
-
+//onPress = {(e) => onPress(e)}
     return (
-        <View>
-            <Wrapper  viewCursor = {viewCursor} onPress = {(e) => onPress(e)}>
-                <BackStyled view = {viewBack}/>
-                <FrontStyled image = {image} name={name} state = {stateFront}/>
+        <TouchableOpacity style = {style} onPress = {() => {
+            onPress();
+        }}>
+            <Wrapper>
+                <BackStyled style={style} view = {viewBack} size/>
+                <FrontStyled style={style} image = {image} name={name} state = {stateFront} size={size}/>
             </Wrapper>
-        </View>
+        </TouchableOpacity>
     )
 };
 
@@ -54,14 +54,12 @@ const FrontStyled = styled(Front)`
     position: absolute;
 `
 
-const Wrapper = styled.TouchableOpacity `
+const Wrapper = styled.View`
     position: relative;
     margin-top: 2px; 
     margin-bottom: 2px;
     margin-right: 1px;
     margin-left: 1px;
-    width: 20px;   
-    height: 30px;
 `
 
 export default memo(Card);

@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/image-editor": "^2.3.0",
     "@react-navigation/native": "^6.0.4",
     "@react-navigation/native-stack": "^6.2.2",
     "@reduxjs/toolkit": "^1.6.1",
@@ -17,9 +18,13 @@
     "react-content-loader": "^6.0.3",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-anchor-point": "^1.0.5",
+    "react-native-image-rotate": "^2.1.0",
+    "react-native-module": "0.0.1",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.4.0",
     "react-native-web": "~0.13.12",
+    "react-native-webview": "^11.13.1",
     "react-redux": "^7.2.5",
     "redux": "^4.1.1",
     "styled-components": "^5.3.1"

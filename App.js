@@ -9,7 +9,7 @@ import Card, { CARD_STATE } from './components/Card/Card';
 import FieldGame from './components/FieldGame/FieldGame';
 import {loadCardInfos} from "./components/FieldGame/fieldGameSlice";
 
-// store.dispatch(loadCardInfos());
+store.dispatch(loadCardInfos());
 
 export default function App() {
   return (
